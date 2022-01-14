@@ -22,7 +22,8 @@ func main() {
 func DemoClock() {
 	a = app.New()
 	cr := cron.New()
-	if _, err := cr.AddFunc("40 14 * * *", func() {
+	// 周一到周五，下午14点40分
+	if _, err := cr.AddFunc("40 14 * * 1-5", func() {
 		CreateWindow()
 	}); err != nil {
 		log.Fatal(err)
